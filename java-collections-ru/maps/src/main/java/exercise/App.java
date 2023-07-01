@@ -38,6 +38,7 @@ public class App {
         return result.toString();
     }
 
+    /*
     public static void main(String[] args) {
         String sentence = "word text cat apple word map apple word";
         Map wordsCount = App.getWordCount(sentence);
@@ -56,6 +57,6 @@ public class App {
         String actual3 = App.toString(wordCount3);
         System.out.println(actual3);
     }
-
+     */
 }
 //END
