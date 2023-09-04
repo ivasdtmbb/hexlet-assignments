@@ -1,39 +1,33 @@
 package exercise;
 
-//import java.util.ArrayList;
-//import java.util.Arrays;
-
 // BEGIN
 public class ReversedSequence implements CharSequence {
-    private char[] textChArray;
+
     private String text;
 
     public ReversedSequence(String text) {
         StringBuilder sbText = new StringBuilder(text);
-        sbText.reverse();
-        this.text = sbText.toString();
-        this.textChArray = this.text.toCharArray();
+        this.text = sbText.reverse().toString();
     }
-
 
     @Override
     public String toString() {
-        return String.valueOf(this.textChArray);
+        return text;
     }
 
     @Override
     public char charAt(int index) {
-        return this.textChArray[index];
+        return text.charAt(index);
     }
 
     @Override
     public int length() {
-        return this.textChArray.length;
+        return text.length();
     }
 
     @Override
     public CharSequence subSequence(int start, int end) {
-        return this.text.subSequence(start, end);
+        return text.subSequence(start, end);
     }
 
 }
