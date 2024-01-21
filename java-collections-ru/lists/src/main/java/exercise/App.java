@@ -1,6 +1,6 @@
 package exercise;
 
-import com.sun.source.util.SourcePositions;
+import com.sun.source.tree.ArrayAccessTree;
 
 import java.util.Arrays;
 import java.util.ArrayList;
@@ -8,19 +8,18 @@ import java.util.List;
 
 // BEGIN
 public class App {
-    public static boolean scrabble(String symbols, String word) {
-
+    public static Boolean scrabble(String symbols, String word) {
         String[] symbolsArray = symbols.toLowerCase().split("");
         String[] wordArray = word.toLowerCase().split("");
 
-        List<String> symbolsList = new ArrayList<>(Arrays.asList(symbolsArray));
-        List<String> wordList = new ArrayList<>(Arrays.asList(wordArray));
+        var symbolsList = new ArrayList<>(Arrays.asList(symbolsArray));
+        var wordList = new ArrayList<>(Arrays.asList(wordArray));
 
-        for (String current : wordList) {
-            if (!symbolsList.contains(current)) {
+        for (String symbol : wordList) {
+            if (!symbolsList.contains(symbol)) {
                 return false;
             }
-            symbolsList.remove(current);
+            symbolsList.remove(symbol);
         }
         return true;
     }
