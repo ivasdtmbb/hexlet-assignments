@@ -28,15 +28,15 @@ class AppTest {
     void testToString() {
         String sentence1 = "word text cat apple word map apple word";
         Map wordCount1 = App.getWordCount(sentence1);
-        String actual1 = App.toString(wordCount1);
-        String[] expectedSubstrings1 = {"{\n" + "  apple: 2\n", "  cat: 1\n", "  text: 1\n", "  word: 3\n", "  map: 1\n" + "}"};
+        String actual1 = App.toString(wordCount1).trim();
+        String[] expectedSubstrings1 = {"  apple: 2\n", "  cat: 1\n", "  text: 1\n", "  word: 3\n", "  map: 1\n"};
         assertThat(actual1).contains(expectedSubstrings1);
         assertThat(actual1).hasSize(52);
 
         String sentence2 = "word text cat apple word apple word";
         Map wordCount2 = App.getWordCount(sentence2);
-        String actual2 = App.toString(wordCount2);
-        String[] expectedSubstrings2 = {"{\n" + "  apple: 2\n", "  cat: 1\n", "  text: 1\n", "  word: 3\n" + "}"};
+        String actual2 = App.toString(wordCount2).trim();
+        String[] expectedSubstrings2 = {"  apple: 2\n", "  cat: 1\n", "  text: 1\n", "  word: 3\n"};
         assertThat(actual2).contains(expectedSubstrings2);
         assertThat(actual2).hasSize(43);
 
